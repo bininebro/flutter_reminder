@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reminder_new/pages/my_reminders.dart';
+import 'package:reminder_new/pages/main_page.dart';
 
 class Splash_page extends StatelessWidget {
   const Splash_page({Key? key}) : super(key: key);
@@ -83,6 +83,6 @@ class Splash_page extends StatelessWidget {
   }
 
   VoidCallback? dsfs() {
-    Get.to(const MyReminders());
+    Get.to(const Mainpage());
   }
 }

@@ -65,7 +65,7 @@ class StaticsPage extends StatelessWidget {
                                   offset: Offset(1, 1))
                             ],
                           ),
-                          height: size.height * .16,
+                          height: 140,
                           width: size.width * .6,
                           child: Padding(
                             padding: const EdgeInsets.only(left: 8.0, top: 8.0),
@@ -253,7 +253,7 @@ class StaticsPage extends StatelessWidget {
     return [
       charts.Series<WeekReminders, String>(
         id: 'Sales',
-        colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
+        colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
         domainFn: (WeekReminders week, _) => week.days,
         measureFn: (WeekReminders week, _) => week.tasks,
         data: data,
