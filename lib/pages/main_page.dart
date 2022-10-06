@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reminder_new/pages/my_reminders.dart';
 import 'package:reminder_new/pages/statics_page.dart';
 
 class Mainpage extends StatefulWidget {
@@ -9,10 +10,19 @@ class Mainpage extends StatefulWidget {
 }
 
 class _MainpageState extends State<Mainpage> {
+  var currentIndex = 0;
+  var pages = [
+    StaticsPage(),
+    MyReminders(),
+    StaticsPage(),
+    StaticsPage(),
+    StaticsPage(),
+  ];
+  Widget currentPage = StaticsPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const StaticsPage(),
+      body: currentPage,
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: Padding(
@@ -29,7 +39,13 @@ class _MainpageState extends State<Mainpage> {
         shape: const CircularNotchedRectangle(),
         clipBehavior: Clip.antiAlias,
         child: BottomNavigationBar(
-          currentIndex: 0,
+          currentIndex: currentIndex,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+              currentPage = pages[index];
+            });
+          },
           backgroundColor: Colors.white,
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.green,

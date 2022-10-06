@@ -58,6 +58,5 @@ class _MyRemindersState extends State<MyReminders> {
         ),
       ),
     );
-    ;
   }
 }
