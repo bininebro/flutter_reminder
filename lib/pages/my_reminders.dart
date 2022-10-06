@@ -22,39 +22,45 @@ class _MyRemindersState extends State<MyReminders> {
           ),
           fit: BoxFit.cover,
         )),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Text(
-              'My Reminders',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                  height: kToolbarHeight - 8.0,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: TabBar(
-                      labelColor: Colors.white,
-                      unselectedLabelColor: Colors.grey,
-                      indicatorColor: Colors.red,
-                      indicator: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
-                          color: Colors.green),
-                      tabs: const [Text('Week'), Text('Day'), Text('Month')])),
-            ),
-            SizedBox(
-              height: size.height * .7,
-              child: const TabBarView(
-                children: [Text('Day'), DayReminder(), Text('Month')],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const Text(
+                'My Reminders',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-            ),
-          ],
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    height: kToolbarHeight - 8.0,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: TabBar(
+                        labelColor: Colors.white,
+                        unselectedLabelColor: Colors.grey,
+                        indicatorColor: Colors.red,
+                        indicator: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: Colors.green),
+                        tabs: const [
+                          Text('Week'),
+                          Text('Day'),
+                          Text('Month')
+                        ])),
+              ),
+              SizedBox(
+                height: size.height * .7,
+                child: const TabBarView(
+                  children: [Text('Day'), DayReminder(), Text('Month')],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

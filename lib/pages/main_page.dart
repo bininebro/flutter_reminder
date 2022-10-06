@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:reminder_new/pages/my_reminders.dart';
 import 'package:reminder_new/pages/statics_page.dart';
 
+import 'create_reminder_page.dart';
+
 class Mainpage extends StatefulWidget {
   const Mainpage({Key? key}) : super(key: key);
 
@@ -14,7 +16,7 @@ class _MainpageState extends State<Mainpage> {
   var pages = [
     StaticsPage(),
     MyReminders(),
-    StaticsPage(),
+    CreateReminderPage(),
     StaticsPage(),
     StaticsPage(),
   ];
@@ -32,7 +34,12 @@ class _MainpageState extends State<Mainpage> {
             Icons.add,
           ),
           backgroundColor: Colors.green,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              currentIndex = 2;
+              currentPage = pages[2];
+            });
+          },
         ),
       ),
       bottomNavigationBar: BottomAppBar(

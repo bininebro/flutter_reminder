@@ -22,7 +22,10 @@ class StaticsPage extends StatelessWidget {
                   SizedBox(
                     height: size.height * .25,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      ),
                       child: Image.asset(
                         'assets/header.png',
                         fit: BoxFit.fitHeight,
