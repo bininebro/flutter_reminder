@@ -110,7 +110,14 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                   width: width,
                   height: 180,
                   decoration: BoxDecoration(
-                    color: Colors.amber,
+                    gradient: const LinearGradient(
+                      colors: [
+                        Colors.amber,
+                        Colors.red,
+                        Colors.deepPurple,
+                        Colors.teal,
+                      ],
+                    ),
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
@@ -126,14 +133,13 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                 Row(
                   children: [
                     DottedBorder(
-                      radius: Radius.circular(20),
+                      radius: const Radius.circular(15),
                       color: Colors.black,
-                      strokeWidth: 1,
+                      borderType: BorderType.RRect,
                       child: Container(
-                        padding: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(14),
                         decoration: BoxDecoration(
                             color: Colors.grey,
-                            border: Border.all(color: Colors.black45),
                             borderRadius: BorderRadius.circular(15)),
                         child: const Icon(
                           Icons.add,
@@ -142,14 +148,38 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                       ),
                     ),
                     const SizedBox(width: 15),
-                    Flexible(
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: DateTime.now().toString(),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10))),
+                    Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Icon(
+                        Icons.person,
+                        color: Colors.white,
                       ),
                     ),
+                    const SizedBox(width: 15),
+                    Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                          color: Colors.teal,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                    )
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -163,7 +193,8 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                         onPrimary: Colors.white,
                       ),
                       child: const Text('Save and Continue')),
-                )
+                ),
+                const SizedBox(height: 25),
               ],
             ),
           ),
