@@ -26,10 +26,10 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  children: [
-                    const Icon(Icons.close),
-                    const SizedBox(width: 15),
-                    const Text(
+                  children: const [
+                    Icon(Icons.close),
+                    SizedBox(width: 15),
+                    Text(
                       'Edit Timeline',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -189,7 +189,7 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                   child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
+                        primary: Color(0xff1CAE81),
                         onPrimary: Colors.white,
                       ),
                       child: const Text('Save and Continue')),

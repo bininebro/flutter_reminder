@@ -13,14 +13,14 @@ class Mainpage extends StatefulWidget {
 
 class _MainpageState extends State<Mainpage> {
   var currentIndex = 0;
-  var pages = [
+  var pages = const [
     StaticsPage(),
     MyReminders(),
     CreateReminderPage(),
     StaticsPage(),
     StaticsPage(),
   ];
-  Widget currentPage = StaticsPage();
+  Widget currentPage = const StaticsPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +33,7 @@ class _MainpageState extends State<Mainpage> {
           child: const Icon(
             Icons.add,
           ),
-          backgroundColor: Colors.green,
+          backgroundColor: const Color(0xff1CAE81),
           onPressed: () {
             setState(() {
               currentIndex = 2;
@@ -55,7 +55,7 @@ class _MainpageState extends State<Mainpage> {
           },
           backgroundColor: Colors.white,
           unselectedItemColor: Colors.grey,
-          selectedItemColor: Colors.green,
+          selectedItemColor: const Color(0xff1CAE81),
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: ''),
             BottomNavigationBarItem(

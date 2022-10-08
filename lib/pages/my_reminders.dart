@@ -45,8 +45,9 @@ class _MyRemindersState extends State<MyReminders> {
                         unselectedLabelColor: Colors.grey,
                         indicatorColor: Colors.red,
                         indicator: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: Colors.green),
+                          borderRadius: BorderRadius.circular(8.0),
+                          color: const Color(0xff1CAE81),
+                        ),
                         tabs: const [
                           Text('Week'),
                           Text('Day'),

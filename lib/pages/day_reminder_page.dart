@@ -18,10 +18,11 @@ class DayReminder extends StatelessWidget {
           background: Container(
             child: Row(
               children: const [
+                SizedBox(width: 45),
                 Icon(Icons.dangerous, size: 35, color: Colors.grey),
                 Icon(
                   Icons.check_circle,
-                  color: Colors.green,
+                  color: Color(0xff1CAE81),
                   size: 35,
                 )
               ],

@@ -8,9 +8,9 @@ class ReminderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(
+      leading: const Icon(
         Icons.check_circle,
-        color: Colors.green,
+        color: Color(0xff1CAE81),
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
@@ -39,7 +39,7 @@ class ReminderWidget extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 'dfsfsd fsd ',
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.grey,
                 ),
               ),

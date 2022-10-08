@@ -137,7 +137,7 @@ class StaticsPage extends StatelessWidget {
                         child: const Icon(
                           Icons.bed,
                           size: 35,
-                          color: Colors.greenAccent,
+                          color: Color(0xff1CAE81),
                         ),
                       ),
                       const SizedBox(height: 5),
