@@ -46,11 +46,12 @@ class TaskCard extends StatelessWidget {
                 trailing: Container(
                   decoration: const BoxDecoration(
                     color: Color(0xff1CAE81),
-                    borderRadius:
-                        BorderRadius.only(bottomRight: Radius.circular(15.0)),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(15.0),
+                        topLeft: Radius.circular(15.0)),
                   ),
                   height: 90,
-                  width: 40,
+                  width: 25,
                   child: const Icon(
                     Icons.check,
                     color: Colors.white,

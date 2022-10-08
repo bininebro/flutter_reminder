@@ -2,6 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:reminder_new/pages/timeline_page.dart';
 
 class CreateReminderPage extends StatefulWidget {
   const CreateReminderPage({Key? key}) : super(key: key);
@@ -13,10 +14,10 @@ class CreateReminderPage extends StatefulWidget {
 class _CreateReminderPageState extends State<CreateReminderPage> {
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width * .95;
+    var width = MediaQuery.of(context).size.width * .94;
     var today = DateTime.now();
     final dateTimeFormat = DateFormat('dd/MM/yyyy');
-    var datehint = dateTimeFormat.format(today);
+    var dateHint = dateTimeFormat.format(today);
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -91,7 +92,7 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                     Flexible(
                       child: TextField(
                         decoration: InputDecoration(
-                            hintText: datehint,
+                            hintText: dateHint,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10))),
                       ),
@@ -185,11 +186,16 @@ class _CreateReminderPageState extends State<CreateReminderPage> {
                 const SizedBox(height: 20),
                 SizedBox(
                   width: width,
-                  height: 45,
+                  height: 55,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TimeLine()));
+                      },
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xff1CAE81),
+                        primary: const Color(0xff1CAE81),
                         onPrimary: Colors.white,
                       ),
                       child: const Text('Save and Continue')),

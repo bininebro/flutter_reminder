@@ -83,6 +83,6 @@ class Splash_page extends StatelessWidget {
   }
 
   VoidCallback? dsfs() {
-    Get.to(const Mainpage());
+    Get.to(const MainPage());
   }
 }

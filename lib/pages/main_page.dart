@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:reminder_new/pages/my_reminders.dart';
 import 'package:reminder_new/pages/statics_page.dart';
+import 'package:reminder_new/pages/timeline_page.dart';
 
 import 'create_reminder_page.dart';
 
-class Mainpage extends StatefulWidget {
-  const Mainpage({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  State<Mainpage> createState() => _MainpageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _MainpageState extends State<Mainpage> {
+class _MainPageState extends State<MainPage> {
   var currentIndex = 0;
   var pages = const [
     StaticsPage(),
     MyReminders(),
     CreateReminderPage(),
-    StaticsPage(),
+    TimeLine(),
     StaticsPage(),
   ];
   Widget currentPage = const StaticsPage();
@@ -30,9 +31,6 @@ class _MainpageState extends State<Mainpage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
         child: FloatingActionButton(
-          child: const Icon(
-            Icons.add,
-          ),
           backgroundColor: const Color(0xff1CAE81),
           onPressed: () {
             setState(() {
@@ -40,6 +38,9 @@ class _MainpageState extends State<Mainpage> {
               currentPage = pages[2];
             });
           },
+          child: const Icon(
+            Icons.add,
+          ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(

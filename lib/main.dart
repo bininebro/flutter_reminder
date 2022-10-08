@@ -51,6 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return firstRun ? const Splash_page() : const Mainpage();
+    return firstRun ? const Splash_page() : const MainPage();
   }
 }
